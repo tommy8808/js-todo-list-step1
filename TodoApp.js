@@ -6,7 +6,7 @@ class TodoApp {
         //TodoList();
         //const todoItem = new TodoItem();
         document.querySelector('#new-todo-title').addEventListener("keydown", this.addTodoItem);
-        document.querySelector('#todo-list').addEventListener("click", this.toggleChecked);
+        document.querySelector('#todo-list').addEventListener("click", this.itemEvent);
     }
 
     addTodoItem = (e) => {
@@ -25,9 +25,13 @@ class TodoApp {
         }
     }
 
-    toggleChecked = (e) => {debugger
+    itemEvent = (e) => {
         if (e.target.className === "toggle") {
             e.target.offsetParent.className = e.target.offsetParent.className === "completed" ? "" : "completed";
+        }
+
+        if (e.target.className === "destroy") {
+            e.target.parentNode.parentNode.removeChild(e.target.parentNode);
         }
     }
 }
