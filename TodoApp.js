@@ -24,6 +24,7 @@ class TodoApp {
                             <input class="edit" value="${inputValue.value}" />
                         </li>`;
             ul.innerHTML += list;
+            inputValue.value = "";
         }
     }
 
@@ -45,7 +46,8 @@ class TodoApp {
 
     listKeydownEventHandler = (e) => {//이제 state 관리의 필요성 생김
         if (e.key === "Escape") {//esc 눌렀을때는 원래 값 유지
-            //ex) 
+            e.target.value = e.target.offsetParent.querySelector('.label').innerText;
+            e.target.offsetParent.className = "";
         }
         if (e.key === "Enter") {//Enter 시 값 수정
             const inputValue = e.target.value;
@@ -56,6 +58,7 @@ class TodoApp {
             e.target.offsetParent.className = "";
             //this.setState({e.target: e.target.value})
         }
+            
     }
 }
 
