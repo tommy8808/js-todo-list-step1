@@ -17,8 +17,8 @@ class TodoApp {
         //TodoList();
         //const todoItem = new TodoItem();
         //document.querySelector('#new-todo-title').addEventListener("keydown", this.addTodoItem);
-        document.querySelector('#todo-list').addEventListener("click", this.listClickEventHandler);
-        document.querySelector('#todo-list').addEventListener("dblclick", this.listDblClickEventHandler);
+        //document.querySelector('#todo-list').addEventListener("click", this.listClickEventHandler);
+        //document.querySelector('#todo-list').addEventListener("dblclick", this.listDblClickEventHandler);
         document.querySelector('#todo-list').addEventListener("keydown", this.listKeydownEventHandler);
     }
 
